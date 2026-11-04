@@ -57,7 +57,7 @@ echo Installing local Wasmtime runtime and selecting the Ollama model...
 "%PYEXE%" setup_local.py
 if errorlevel 1 (
     echo.
-    echo Setup failed. Copy the complete error and send it to ChatGPT.
+    echo Setup failed. Copy the complete error shown above to investigate.
     pause
     exit /b 1
 )
@@ -68,7 +68,7 @@ echo Running containment/self-test...
 if errorlevel 1 (
     echo.
     echo Self-test failed. Do not run generations yet.
-    echo Copy the complete error and send it to ChatGPT.
+    echo Copy the complete error shown above to investigate.
     pause
     exit /b 1
 )

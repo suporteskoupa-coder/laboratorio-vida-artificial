@@ -15,7 +15,7 @@ if not defined PYEXE (
 "%PYEXE%" setup_cognitive.py
 if errorlevel 1 (
   echo.
-  echo Failed to install the cognitive model. Copy the error and send it to ChatGPT.
+  echo Failed to install the cognitive model. Copy the error shown above to investigate.
   pause
   exit /b 1
 )
