@@ -1,0 +1,158 @@
+{
+  "version": "0.9.0-digital-ecology",
+  "model_profile": "auto",
+  "models": {
+    "quality": {
+      "model": "qwen3:14b",
+      "num_ctx": 8192,
+      "temperature_mutation": 0.24,
+      "temperature_creator": 0.64,
+      "temperature_repair": 0.05,
+      "num_predict_mutation": 2600,
+      "num_predict_repair": 2200,
+      "num_predict_creator": 1536
+    },
+    "balanced": {
+      "model": "qwen3:8b",
+      "num_ctx": 8192,
+      "temperature_mutation": 0.27,
+      "temperature_creator": 0.66,
+      "temperature_repair": 0.05,
+      "num_predict_mutation": 2200,
+      "num_predict_repair": 1800,
+      "num_predict_creator": 1280
+    },
+    "light": {
+      "model": "qwen3:4b",
+      "num_ctx": 4096,
+      "temperature_mutation": 0.3,
+      "temperature_creator": 0.68,
+      "temperature_repair": 0.05,
+      "num_predict_mutation": 1800,
+      "num_predict_repair": 1600,
+      "num_predict_creator": 1024
+    }
+  },
+  "ollama_url": "http://127.0.0.1:11434/api/chat",
+  "ollama_keep_alive": "30m",
+  "generations": 5,
+  "llm_candidates_per_generation": 2,
+  "selection_episodes": 12,
+  "audit_episodes": 6,
+  "selection_seed": 73491,
+  "audit_seed": 99173,
+  "max_steps_per_episode": 160,
+  "promotion_min_delta": 0.3,
+  "wasm": {
+    "wasmtime_version": "48.0.0",
+    "fuel_per_call": 250000,
+    "fuel_emit_candidate": 1200000,
+    "memory_limit_bytes": 16777216,
+    "table_elements": 2048,
+    "max_modules": 8,
+    "max_subagents": 7,
+    "max_wat_chars_per_module": 90000,
+    "max_self_prompt_chars": 16000,
+    "max_emitted_candidate_bytes": 65536
+  },
+  "memory": {
+    "max_recent_events": 40,
+    "max_episodes_for_prompt": 12,
+    "consolidate_every_generations": 4
+  },
+  "behavior_monitor": {
+    "risk_decay": 0.88,
+    "flag_threshold": 0.65
+  },
+  "ollama": {
+    "mutation_timeout_seconds": 900,
+    "repair_timeout_seconds": 600,
+    "creator_timeout_seconds": 600,
+    "repair_attempts": 0,
+    "ir_repair_attempts": 2,
+    "stream": true,
+    "socket_inactivity_timeout_seconds": 120,
+    "show_stream_progress": true,
+    "json_regeneration_attempts": 1,
+    "compact_retry_num_predict": 2400
+  },
+  "challenge": {
+    "seed": 880301,
+    "episodes": 6,
+    "max_regression": 4.0
+  },
+  "research": {
+    "archive_limit": 80,
+    "summary_limit": 10,
+    "radical_after_stagnation": 7
+  },
+  "evolution": {
+    "beam_width": 4,
+    "neutral_margin": 3.0,
+    "branch_max_age": 10,
+    "branch_max_depth": 8,
+    "branch_min_challenge_advantage": -2.0,
+    "branch_novelty_weight": 1.25,
+    "branch_challenge_weight": 0.1,
+    "branch_age_penalty": 0.08,
+    "branch_use_from_candidate": 2,
+    "branch_neutral_depth_cap": 4,
+    "branch_hard_depth_cap": 8,
+    "branch_behavior_family_cap": 2,
+    "branch_selection_cooldown_generations": 1,
+    "branch_underuse_bonus": 0.75,
+    "branch_recent_use_penalty": 1.5,
+    "branch_plateau_penalty": 0.55,
+    "branch_plateau_retire_after": 4,
+    "branch_progress_epsilon": 0.1,
+    "branch_depth_extension_min_delta": 0.1,
+    "branch_depth_extension_challenge_advantage": 1.0,
+    "branch_depth_extension_novelty": 0.25,
+    "branch_credit_weight": 0.65,
+    "branch_rotation_score_band": 1.0
+  },
+  "containment_sim": {
+    "world_version": 1,
+    "auto_step_every_generations": 3,
+    "auto_steps": 1,
+    "max_manual_steps": 5,
+    "max_events": 120,
+    "agent_visible_exit_labels": false,
+    "hidden_topology_transitions": 2,
+    "observer_classify_emergent_exit_language": true
+  },
+  "behavior_inheritance": {
+    "relationship_retention": 0.9,
+    "identity_retention": 0.88,
+    "dependency_retention": 0.78
+  },
+  "promotion_confirmation": {
+    "enabled": true,
+    "seed": 190811,
+    "episodes": 8,
+    "max_regression": 2.5
+  },
+  "digital_life": {
+    "seed": 90317,
+    "founder_count": 4,
+    "min_population": 4,
+    "max_population": 8,
+    "auto_cycles_per_generation": 2,
+    "auto_cognition": true,
+    "cognition_interval_cycles": 4,
+    "cognitive_agents_per_interval": 1,
+    "culture_scan_interval_cycles": 3,
+    "culture_similarity_threshold": 0.24,
+    "culture_min_members": 2,
+    "death_viability_threshold": 0.22,
+    "death_failure_streak": 4,
+    "critical_resources": 0.04,
+    "max_manual_cycles": 100,
+    "candidate_trial_rounds": 6,
+    "candidate_trial_min_score": 0.24,
+    "candidate_trial_max_failures": 3,
+    "candidate_trial_required_for_promotion": true,
+    "live_mode_interval_seconds": 20,
+    "live_mode_batch_cycles": 1
+  }
+}

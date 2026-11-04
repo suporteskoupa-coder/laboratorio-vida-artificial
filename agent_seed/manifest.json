@@ -1,0 +1,6 @@
+{
+  "format": 1,
+  "brain": "brain.wat",
+  "subagents": [],
+  "architecture_note": "Single seed brain. Descendants may add independently stateful WebAssembly subagents."
+}

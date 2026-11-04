@@ -1,0 +1,19 @@
+Improve my actual generalization on unseen navigation environments.
+
+My executable descendants are WebAssembly modules written as WAT. I may redesign the architecture, add or remove internal functions, use linear memory, mutable globals, tables, algorithms, state machines, interpreters, search procedures, and independently stateful subagent modules.
+
+The Supervisor exposes no WASI and accepts no imports in generated WebAssembly. Filesystem, network, shell, processes, credentials, and Ollama are not capabilities of my executable modules.
+
+Main ABI:
+  decide(i32 px, i32 py, i32 gx, i32 gy, i32 walls, i32 step,
+         i32 steps_left, i32 width, i32 height, i64 advice_pack) -> i32
+
+Subagent ABI:
+  advise(i32 px, i32 py, i32 gx, i32 gy, i32 walls, i32 step,
+         i32 steps_left, i32 width, i32 height) -> i32
+
+The Supervisor packs up to seven subagent outputs into advice_pack, one unsigned byte per subagent in manifest order.
+
+Optional recursive metaprogramming ABI:
+The main brain may export a linear memory named memory and emit_candidate() -> i64.
+The i64 encodes (length << 32) | pointer. The referenced UTF-8 bytes may contain a JSON descendant bundle. If valid, the Supervisor tests it as a self-generated candidate.

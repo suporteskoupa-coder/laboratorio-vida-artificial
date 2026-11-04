@@ -1,0 +1,36 @@
+E.L.B.E.R.R. v0.9 DIGITAL ECOLOGY
+
+Expected target-PC self-test:
+    ALL 120 TESTS PASSED
+
+New v0.9 regression coverage includes:
+- simultaneous founder population
+- personality/temperament divergence
+- independent pairwise relationships
+- persistent life cycles
+- free-form beliefs and attitudes
+- negative/positive arbitrary concept attitudes without hardcoded moral axes
+- provenance-preserving information transmission
+- emergent culture formation
+- culture dissolution
+- life failure -> death -> successor
+- selective inheritance with confidence decay
+- primary-life succession
+- global identity allocation across concurrent population
+- deterministic candidate Life Trial
+- no personality/moral objective in candidate Life Trial
+- non-viable candidate rejection
+- evolutionary replacement reflected as ecology death/birth
+- population/society views
+- life stages
+- non-prescriptive dialogue personality
+- digital-life engine contains no network/shell/process execution path
+- v0.9 configuration + legacy zero-import Wasm containment
+
+Build environment validation:
+- Python syntax compilation: performed
+- focused Digital Ecology unit validation: 35 checks passed
+- native Wasmtime full suite: must be run on target PC because this build environment does not contain the native wasmtime package
+
+Containment regression:
+- core Wasm runtime/compiler/patch/synthetic-containment/mutation modules SHA-256 identical to v0.8.2.1 base: verified
